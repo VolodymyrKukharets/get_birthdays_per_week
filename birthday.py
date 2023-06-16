@@ -2,7 +2,7 @@ import datetime
 import random
 
 users = []
-today = datetime.datetime(year=2023, month=12, day=4)
+today = datetime.datetime(year=2023, month=6, day=13)
 
 
 # today = datetime.datetime.now()
@@ -37,7 +37,7 @@ def get_birthdays_per_week(users: list, today: datetime):
 
     days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
     day_of_week = today.strftime('%A')
-    # print("Today", today.date(), day_of_week)
+    #print("Today", today.date(), day_of_week)
     diff = None
     birthday_this_year = None
     birthdey_list = []
@@ -66,7 +66,7 @@ def get_birthdays_per_week(users: list, today: datetime):
             diff = 0
 
         if min_days <= diff <= max_days:
-            # print(user["name"], birthday_this_year.date(), birthday_this_year.strftime('%A'))
+            print(user["name"], birthday_this_year.date(), birthday_this_year.strftime('%A'))
             burthday_day = birthday_this_year.strftime('%A')
             if burthday_day == "Saturday" or burthday_day == "Sunday":
                 burthday_day = "Monday"
@@ -82,7 +82,7 @@ def get_birthdays_per_week(users: list, today: datetime):
 
 
 def main():
-    pers_gen(550)
+    pers_gen(5000)
     get_birthdays_per_week(users, today)
 
 
